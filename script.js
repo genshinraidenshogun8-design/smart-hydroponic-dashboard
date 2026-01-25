@@ -1,4 +1,4 @@
-const firebaseURL = "https://smarthydroponicsystem-47b76-default-rtdb.asia-southeast1.firebasedatabase.app";
+const firebaseURL = "https://smarthydroponicsystem-47b76-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
 function getData() {
   fetch(firebaseURL + "/sensors.json")
