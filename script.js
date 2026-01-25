@@ -20,7 +20,7 @@ function getData() {
   fetch(firebaseURL + "/lights.json")
     .then(res => res.json())
     .then(data => {
-      document.getElementById("uv-light").innerText = data;
+      document.getElementById("uv-light").innerText = data.status;
     });
 
 }
