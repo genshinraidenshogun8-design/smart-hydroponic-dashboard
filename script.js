@@ -1,4 +1,4 @@
-const firebaseURL = "https://smarthydroponicsystem-47b76-default-rtdb.asia-southeast1.firebasedatabase.app/";
+const firebaseURL = "https://smarthydroponicsystem-47b76-default-rtdb.asia-southeast1.firebasedatabase.app";
 
 function getData() {
   fetch(firebaseURL + "/sensors.json")
@@ -39,17 +39,16 @@ function pumpOff() {
   });
 }
 function uvOn() {
-  fetch(firebaseURL + "/uv_light.json", {
+  fetch(firebaseURL + "/lights.json", {
     method: "PUT",
     body: JSON.stringify("ON")
   });
 } 
 function uvOff() {
-  fetch(firebaseURL + "/uv_light.json", {
+  fetch(firebaseURL + "/lights.json", {
     method: "PUT",
     body: JSON.stringify("OFF")
   });
 }
 
-// refresh every 2 seconds
 setInterval(getData, 2000);
