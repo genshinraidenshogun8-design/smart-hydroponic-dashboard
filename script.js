@@ -6,8 +6,10 @@ function getData() {
     .then(data => {
       document.getElementById("temp").innerText = data.temperature;
       document.getElementById("hum").innerText = data.humidity;
-      document.getElementById("PPM").innerText = data.ppm;
-      document.getElementById("PH").innerText = data.ph;
+      document.getElementById("ppm").innerText = data.ppm;
+      document.getElementById("ph").innerText = data.ph;
+      document.getElementById("uv-uptime").innerText = data.uv_uptime;
+      document.getElementById("pump-uptime").innerText = data.pump_uptime;
     });
 
   fetch(firebaseURL + "/irrigation.json")
@@ -15,6 +17,12 @@ function getData() {
     .then(data => {
       document.getElementById("pump").innerText = data.pump;
     });
+  fetch(firebaseURL + "/lights.json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("uv-light").innerText = data;
+    });
+
 }
 
 function pumpOn() {
@@ -26,6 +34,18 @@ function pumpOn() {
 
 function pumpOff() {
   fetch(firebaseURL + "/irrigation/pump.json", {
+    method: "PUT",
+    body: JSON.stringify("OFF")
+  });
+}
+function uvOn() {
+  fetch(firebaseURL + "/uv_light.json", {
+    method: "PUT",
+    body: JSON.stringify("ON")
+  });
+} 
+function uvOff() {
+  fetch(firebaseURL + "/uv_light.json", {
     method: "PUT",
     body: JSON.stringify("OFF")
   });

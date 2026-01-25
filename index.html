@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Smart Hydroponic Dashboard</title>
-</head>
-<body>
-  <h1>🌱 Smart Hydroponic System</h1>
-  
-  <p>Ppm: <span id="PPM">--</span></p>
-  <p>Ph Level: <span id="PH">--</span></p>
-  <p>Temperature: <span id="temp">--</span> °C</p>
-  <p>Humidity: <span id="hum">--</span> %</p>
-  <p>Pump Status: <span id="pump">--</span></p>
 
+<html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Hydroponic Dashboasrd</title>
+</head>
+
+<body>
+  
+
+<nav>
+  <ul class="sidebar">
+    <li onclick=closeSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="gray"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+    <li><a href="index.html"> <img src="Web_Images/logo.png" height="50px" width="50px" alt="">Hydrophonics</a></li>
+    <li><a href="about.html">Our Mission</a></li>
+    <li><a href="contact.html">Credits</a></li>
+  </ul>
+  <ul>
+    <li><a href="index.html"> <img src="Web_Images/logo.png" height="50px" width="50px" alt="">Hydrophonics</a></li>
+    <li><a href="about.html">Our Mission</a></li>
+    <li><a href="contact.html">Credits</a></li>
+    <li onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+  </ul>
+</nav>
+  <h1> Smart Hydroponic System</h1>
+<div class="data">
+  <div class="DLay">
+    <p>Ppm: <span id="ppm">--</span></p>
+    <p>Ph Level: <span id="ph">--</span></p>
+    <p>Temperature: <span id="temp">--</span> °C</p>
+    <p>Humidity: <span id="hum">--</span> %</p>
+  </div>
+  <div class="PULay">
+    <p>Pump Status: <span id="pump">--</span></p>
+    <p>Pump Up Time: <span id="pump-uptime">--</span></p>
+    <p>Uv Status: <span id="uv-light">--</span></p>
+    <p>Uv Up Time: <span id="uv-uptime">--</span></p>
+  </div>
+</div>
   <button onclick="pumpOn()">Turn Pump ON</button>
   <button onclick="pumpOff()">Turn Pump OFF</button>
+  <button onclick="uvOn()">Turn UV Light ON</button>
+  <button onclick="uvOff()">Turn UV Light OFF</button>
 
-  <script src="script.js"></script>
+
+<script >
+  function showSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex'
+    } 
+    function closeSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none'
+    } 
+  src="script.js"
+</script>
+
 </body>
+<footer>
+  <p>© 2026 Smart Hydroponic System. Thesis purposes only.</p>
+</footer>
 </html>
